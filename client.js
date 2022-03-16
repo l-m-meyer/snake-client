@@ -8,9 +8,11 @@ const clientOptions = {
 
 const basicSetupForConnection = conn => {
   conn.setEncoding('utf-8');
+  conn.write('Name: LMM');
 };
 
 const handleReceivedData = (data) => {
+  console.log('Succesfully connected to game server');
   console.log('Server says: ', data);
 };
 
