@@ -9,6 +9,14 @@ const clientOptions = {
 const basicSetupForConnection = conn => {
   conn.setEncoding('utf-8');
   conn.write('Name: LMM');
+ 
+  // setInterval(() => {
+  //   conn.write('Move: left');
+  // }, 550);
+
+  // setInterval(() => {
+  //   conn.write('Move: up');
+  // }, 500);
 };
 
 const handleReceivedData = (data) => {
