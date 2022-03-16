@@ -1,11 +1,6 @@
 const net = require('net');
 const { IP, PORT } = require('./constants');
 
-const clientOptions = {
-  host: '165.227.47.243',
-  port: 50541
-};
-
 const basicSetupForConnection = conn => {
   conn.setEncoding('utf-8');
   conn.write('Name: LMM');
