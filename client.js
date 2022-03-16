@@ -1,4 +1,3 @@
-// main file to launch game client
 const net = require('net');
 
 const clientOptions = {
