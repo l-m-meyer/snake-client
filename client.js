@@ -1,4 +1,5 @@
 const net = require('net');
+const { IP, PORT } = require('./constants');
 
 const clientOptions = {
   host: '165.227.47.243',
@@ -8,14 +9,6 @@ const clientOptions = {
 const basicSetupForConnection = conn => {
   conn.setEncoding('utf-8');
   conn.write('Name: LMM');
- 
-  // setInterval(() => {
-  //   conn.write('Move: left');
-  // }, 550);
-
-  // setInterval(() => {
-  //   conn.write('Move: up');
-  // }, 500);
 };
 
 const handleReceivedData = (data) => {
@@ -23,8 +16,12 @@ const handleReceivedData = (data) => {
   console.log('Server says: ', data);
 };
 
+//establishes a connection with the game server
 const connect = () => {
-  const conn = net.createConnection(clientOptions);
+  const conn = net.createConnection({ 
+    host: IP, 
+    port: PORT 
+  });
 
   // interpret incoming data as text
   basicSetupForConnection(conn);
